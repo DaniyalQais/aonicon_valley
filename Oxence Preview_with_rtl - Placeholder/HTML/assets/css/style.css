@@ -4415,7 +4415,7 @@ h6, .h6 {
 .main-slider-active {
   width: 100%; }
   .main-slider-active .slick-list {
-    overflow: hidden; }
+    overflow: visible; }
 
 .main-slider-dots {
   margin-top: -135px;

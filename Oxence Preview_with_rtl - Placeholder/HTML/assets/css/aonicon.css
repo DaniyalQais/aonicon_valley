@@ -1552,31 +1552,22 @@ img {
   height: auto;
 }
 
-/* Guarantee no horizontal overflow from slider tracks, lights, or rows */
-.main-slider-area,
-.main-slider-active,
-.main-slider-active .slick-list,
-.main-slider-active .slick-track {
+/* Guarantee no horizontal overflow from slider area while allowing Slick fade */
+.main-slider-area {
   max-width: 100% !important;
-  overflow: hidden !important;
-  position: relative !important;
+  overflow-x: clip !important;
+  position: relative;
 }
 
-/* STRICT SLIDE ISOLATION: Prevent inactive slides from stacking or showing text */
-.main-slider-active .slick-slide {
-  opacity: 0 !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out !important;
-  z-index: 1 !important;
+.main-slider-active {
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
-.main-slider-active .slick-slide.slick-current,
-.main-slider-active .slick-slide.slick-active {
-  opacity: 1 !important;
+/* Ensure hero visual showcase and content are always visible and never hidden by animation engines */
+.hero-visual-showcase,
+.slider-content {
   visibility: visible !important;
-  pointer-events: auto !important;
-  z-index: 5 !important;
 }
 
 .bgc-black-with-lighting {
