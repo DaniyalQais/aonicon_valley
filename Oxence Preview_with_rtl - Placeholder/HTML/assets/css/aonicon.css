@@ -49,16 +49,26 @@
    ======================================================== */
 body,
 p,
-span,
 li,
 a,
 input,
 textarea,
 select,
-button,
 .form-control,
-.home-one {
+.home-one,
+span:not([class*="fa"]):not([class*="flaticon"]):not(.count-text),
+button:not([class*="fa"]):not([class*="flaticon"]) {
   font-family: var(--aonicon-font-body) !important;
+}
+
+/* Guarantee font-family integrity for all icons */
+.fas, .far, .fal, .fab, .fa,
+[class^="fa-"], [class*=" fa-"] {
+  font-family: "Font Awesome 5 Pro" !important;
+}
+
+[class^="flaticon-"], [class*=" flaticon-"] {
+  font-family: "flaticon" !important;
 }
 
 h1,
@@ -1499,9 +1509,28 @@ img {
 /* Guarantee no horizontal overflow from slider tracks, lights, or rows */
 .main-slider-area,
 .main-slider-active,
-.main-slider-active .slick-list {
+.main-slider-active .slick-list,
+.main-slider-active .slick-track {
   max-width: 100% !important;
   overflow: hidden !important;
+  position: relative !important;
+}
+
+/* STRICT SLIDE ISOLATION: Prevent inactive slides from stacking or showing text */
+.main-slider-active .slick-slide {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out !important;
+  z-index: 1 !important;
+}
+
+.main-slider-active .slick-slide.slick-current,
+.main-slider-active .slick-slide.slick-active {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  z-index: 5 !important;
 }
 
 .bgc-black-with-lighting {
@@ -1512,7 +1541,8 @@ img {
 
 /* Hide off-screen floating decorators that cause horizontal whitespace */
 .about-image-one .image-left,
-.statistics-three-image .image-right {
+.statistics-three-image .image-right,
+.work-process-shape {
   display: none !important;
 }
 
