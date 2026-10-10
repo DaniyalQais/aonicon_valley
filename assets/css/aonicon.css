@@ -5,6 +5,52 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800;900&display=swap');
 
+/* Font Awesome Pro 5.14.0 Web Fonts Integration */
+@font-face {
+  font-family: 'Font Awesome 5 Pro';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url('../fonts/fa-solid-900.woff2') format('woff2'),
+       url('../fonts/fa-solid-900.woff') format('woff'),
+       url('../fonts/fa-solid-900.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Font Awesome 5 Pro';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/fa-regular-400.woff2') format('woff2'),
+       url('../fonts/fa-regular-400.woff') format('woff'),
+       url('../fonts/fa-regular-400.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'Font Awesome 5 Brands';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../fonts/fa-brands-400.woff2') format('woff2'),
+       url('../fonts/fa-brands-400.woff') format('woff'),
+       url('../fonts/fa-brands-400.ttf') format('truetype');
+}
+
+.fa, .fas {
+  font-family: 'Font Awesome 5 Pro' !important;
+  font-weight: 900 !important;
+}
+
+.far {
+  font-family: 'Font Awesome 5 Pro' !important;
+  font-weight: 400 !important;
+}
+
+.fab {
+  font-family: 'Font Awesome 5 Brands' !important;
+  font-weight: 400 !important;
+}
+
 :root {
   /* Brand Color Palette - Sunset Coral & Agency Orange (Harmonized with Template) */
   --aonicon-primary: #FC653C;
