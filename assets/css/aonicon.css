@@ -589,6 +589,17 @@ a.theme-btn.style-three:hover {
   display: block;
 }
 
+/* Background card shapes behind images (About & Proven Track Record) */
+.about-image-one.bg-squire-shape:before,
+.about-image-one.bg-squire-shape::before,
+.statistics-three-image.bg-squire-shape:before,
+.statistics-three-image.bg-squire-shape::before,
+.statistics-three-image:before,
+.statistics-three-image::before {
+  background: #FC653C !important;
+  background-color: #FC653C !important;
+}
+
 .feature-middle .image .round {
   width: 320px;
   height: 420px;
