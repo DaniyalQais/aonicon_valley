@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Aonicon Logo Suite Verification</title>
+  <link rel="icon" href="/public/favicon.ico">
+  <link rel="icon" type="image/svg+xml" href="/public/favicon.svg">
+  <style>
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      margin: 0;
+      padding: 40px;
+      background: #0D0C0E;
+      color: #FFF;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+    }
+    .card {
+      padding: 30px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+    .dark-card {
+      background: #171518;
+    }
+    .light-card {
+      background: #F7F7FA;
+      color: #171518;
+    }
+    h3 { margin-top: 0; margin-bottom: 20px; font-size: 16px; opacity: 0.8; }
+    .logo-box {
+      display: flex;
+      align-items: center;
+      min-height: 80px;
+    }
+    .header-logo {
+      height: 32px;
+      width: auto;
+    }
+    .footer-logo {
+      height: 60px;
+      width: auto;
+    }
+    .icon-preview {
+      display: flex;
+      gap: 20px;
+      align-items: center;
+    }
+  </style>
+</head>
+<body>
+  <h1>Aonicon Valley Brand Logo Suite & Favicon Pack</h1>
+  
+  <div class="grid">
+    <!-- Header Logo Dark (Height 32px) -->
+    <div class="card dark-card">
+      <h3>1. Header Logo - Dark (/public/logo-dark.svg) - Height 32px</h3>
+      <div class="logo-box">
+        <img src="/public/logo-dark.svg" alt="Aonicon Valley" class="header-logo">
+      </div>
+    </div>
+
+    <!-- Header Logo Light (Height 32px) -->
+    <div class="card light-card">
+      <h3>2. Header Logo - Light (/public/logo-light.svg) - Height 32px</h3>
+      <div class="logo-box">
+        <img src="/public/logo-light.svg" alt="Aonicon Valley" class="header-logo">
+      </div>
+    </div>
+
+    <!-- Footer Logo Full (Dark) -->
+    <div class="card dark-card">
+      <h3>3. Footer Full Logo with Tagline (/public/logo-footer.svg)</h3>
+      <div class="logo-box">
+        <img src="/public/logo-footer.svg" alt="Aonicon Valley Full Logo" class="footer-logo">
+      </div>
+    </div>
+
+    <!-- Circular Favicons -->
+    <div class="card dark-card">
+      <h3>4. Circular Favicon Pack (#171518 with Gradient A)</h3>
+      <div class="icon-preview">
+        <div>
+          <img src="/public/favicon.svg" width="64" height="64" alt="SVG 64px">
+          <div><small>favicon.svg (64px)</small></div>
+        </div>
+        <div>
+          <img src="/public/apple-touch-icon.png" width="48" height="48" alt="Apple Touch 180px">
+          <div><small>Apple Touch</small></div>
+        </div>
+        <div>
+          <img src="/public/favicon-32x32.png" width="32" height="32" alt="PNG 32px">
+          <div><small>PNG (32px)</small></div>
+        </div>
+        <div>
+          <img src="/public/favicon-16x16.png" width="16" height="16" alt="PNG 16px">
+          <div><small>PNG (16px)</small></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

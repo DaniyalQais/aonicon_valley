@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aonicon Mobile Experience & Sticky Bar Verification</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 10px 20px;
+            background: #090a0d;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            color: #f1f5f9;
+            box-sizing: border-box;
+        }
+        .header-bar {
+            text-align: center;
+            margin-bottom: 12px;
+        }
+        .header-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ff624b;
+            margin-bottom: 4px;
+        }
+        .header-desc {
+            font-size: 12px;
+            color: #94a3b8;
+        }
+        .comparison-grid {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 40px;
+        }
+        .phone-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .col-badge {
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 12px;
+            border-radius: 20px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        .badge-hero {
+            background: rgba(255, 98, 75, 0.15);
+            color: #ff624b;
+            border: 1px solid rgba(255, 98, 75, 0.3);
+        }
+        .badge-scrolled {
+            background: rgba(37, 211, 102, 0.15);
+            color: #25d366;
+            border: 1px solid rgba(37, 211, 102, 0.3);
+        }
+        .device-scaler {
+            width: 250px;
+            height: 520px;
+            position: relative;
+        }
+        .device-wrapper {
+            width: 390px;
+            height: 812px;
+            border: 10px solid #222;
+            border-radius: 44px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,255,255,0.12);
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform-origin: top left;
+            transform: scale(0.64);
+            background: #171518;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="header-bar">
+        <div class="header-title">Aonicon — Mobile Sticky Quick Actions Verification</div>
+        <div class="header-desc">Left: Hero (Hidden) &bull; Right: Scrolled Down (Sticky Horizontal Bar Docked)</div>
+    </div>
+
+    <div class="comparison-grid">
+        <!-- 1. Hero State -->
+        <div class="phone-col">
+            <span class="col-badge badge-hero">1. At Top (Hero) &mdash; Bar Hidden</span>
+            <div class="device-scaler">
+                <div class="device-wrapper">
+                    <iframe id="frameHero" src="index.html"></iframe>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. Scrolled State -->
+        <div class="phone-col">
+            <span class="col-badge badge-scrolled">2. Scrolled Down &mdash; Sticky Bar Visible</span>
+            <div class="device-scaler">
+                <div class="device-wrapper">
+                    <iframe id="frameScrolled" src="index.html"></iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function triggerScrolledState() {
+            var scFrame = document.getElementById('frameScrolled');
+            if (scFrame && scFrame.contentWindow) {
+                try {
+                    var win = scFrame.contentWindow;
+                    win.scrollTo(0, 600);
+                    if (win.jQuery) {
+                        win.jQuery(win).trigger('scroll');
+                    }
+                    var bar = win.document.getElementById('mobile-sticky-bar');
+                    if (bar) {
+                        bar.classList.add('is-visible');
+                    }
+                } catch(e) {
+                    console.error('Frame error:', e);
+                }
+            }
+        }
+        window.addEventListener('load', function() {
+            setTimeout(triggerScrolledState, 600);
+            setTimeout(triggerScrolledState, 1500);
+            setTimeout(triggerScrolledState, 3000);
+        });
+    </script>
+</body>
+</html>
